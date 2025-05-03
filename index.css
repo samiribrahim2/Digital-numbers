@@ -43,10 +43,10 @@ body {
     }
     .Numbers {
         height: 100%;
-      
+        width: auto;
         display: grid;
         background-color: #222;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, auto);
         gap: 15px;
         padding: 10px;
       }
@@ -116,10 +116,7 @@ body {
         right: 0;
       }
       
-      /* Turn on all segments for digit 8 */
-      .digit[data-num="8"] .segment {
-        opacity: 1;
-      }
+     
        .light{
         background-color: #ff0000;
       } 

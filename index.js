@@ -22,46 +22,34 @@ btn.addEventListener('click', () => {
         number.value = "";
         // Remove 'light' class from all segments
         document.querySelectorAll('.segment').forEach(seg => seg.classList.remove('light'));
-
         const digits = document.getElementsByClassName('digit');
-
         let usedDigits = 0;
         for (let i = digits.length - 1; i >= 0; i--) {
             digits[i].style.display = "block";
             const digit = value % 10;
             value = Math.floor(value / 10);
             usedDigits++;
-
-            const digitSegments = numbers[digit]; 
+            const digitSegments = numbers[digit];
             const segments = digits[i].querySelectorAll('.segment');
-
-            segments.forEach(s => {
-                s.style.display = "none";
-            })
+            // segments.forEach(s => {
+            //     s.style.display = "none";
+            // })
             if (digitSegments) {
-
                 digitSegments.forEach(classname => {
                     const segment = digits[i].querySelector(`.${classname}`);
-
                     if (segment) {
-                        segment.style.display = "block";
+                        // segment.style.display = "block";
                         segment.classList.add('light');
                     }
                 });
             }
-
             // Stop if no more digits
             if (value === 0) {
                 for (let i = 0; i < digits.length - usedDigits; i++) {
                     digits[i].style.display = "none";
                 }
                 break;
-            };
+            }
         }
     }
-
-
-
-
-
 });
