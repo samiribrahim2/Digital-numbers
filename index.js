@@ -32,12 +32,19 @@ btn.addEventListener('click', () => {
             value = Math.floor(value / 10);
             usedDigits++;
 
-            const digitSegments = numbers[digit];
+            const digitSegments = numbers[digit]; 
+            const segments = digits[i].querySelectorAll('.segment');
 
+            segments.forEach(s => {
+                s.style.display = "none";
+            })
             if (digitSegments) {
+
                 digitSegments.forEach(classname => {
                     const segment = digits[i].querySelector(`.${classname}`);
+
                     if (segment) {
+                        segment.style.display = "block";
                         segment.classList.add('light');
                     }
                 });

@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2vh;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     padding: 2vh;
     height: 60vh;
 }
@@ -36,18 +36,18 @@ body {
 
     .digitalNumbers {
         height: 50vh;
-   
+        width: auto;
         padding: 10%;
-        border: 3px solid black;
+        /* border: 3px solid black; */
          justify-content: center;
     }
     .Numbers {
         height: 100%;
-        
+      
         display: grid;
         background-color: #222;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        gap: 15px;
         padding: 10px;
       }
       .digit {
