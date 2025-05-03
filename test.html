@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .digit {
+  position: relative;
+  width: 60px;
+  height: 100px;
+}
+
+.segment {
+  position: absolute;
+  background: #222;
+  opacity: 0.1; /* off by default */
+  transition: opacity 0.3s;
+  border-radius: 5px;
+}
+
+/* Segment sizes and positions */
+.top, .middle, .bottom {
+  width: 40px;
+  height: 10px;
+  left: 10px;
+}
+
+.top { top: 0; }
+.middle { top: 45px; }
+.bottom { bottom: 0; }
+
+.top-left, .top-right, .bottom-left, .bottom-right {
+  width: 10px;
+  height: 40px;
+}
+
+.top-left { top: 5px; left: 0; }
+.top-right { top: 5px; right: 0; }
+.bottom-left { bottom: 5px; left: 0; }
+.bottom-right { bottom: 5px; right: 0; }
+
+/* Turn on segments */
+.digit[data-num="8"] .segment {
+  opacity: 1;
+}
+
+    </style>
+</head>
+<body>
+    <div class="digit">
+        <div class="segment top"></div>
+        <div class="segment top-left"></div>
+        <div class="segment top-right"></div>
+        <div class="segment middle"></div>
+        <div class="segment bottom-left"></div>
+        <div class="segment bottom-right"></div>
+        <div class="segment bottom"></div>
+      </div>
+      
+</body>
+</html>
