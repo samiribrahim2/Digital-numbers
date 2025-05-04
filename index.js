@@ -52,4 +52,10 @@ btn.addEventListener('click', () => {
             }
         }
     }
+    else{
+        console.log("Invalid number : " + number.value);
+        alert("Invalid number : " + number.value);
+        number.value = "";
+        document.querySelectorAll('.segment').forEach(seg => seg.classList.remove('light'));
+    }
 });
