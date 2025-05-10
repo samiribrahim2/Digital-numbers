@@ -24,7 +24,7 @@ body {
 }
     #input {
         width: 30vw;
-        height: fit-content;
+        height: 5%;
         border: 3px solid black;
         TEXT-ALIGN: CENTER
     }
@@ -62,8 +62,8 @@ body {
       .segment {
         position: absolute;
         background: #646363;
-        opacity: 1; 
-        transition: opacity 0.3s;
+         
+        transition: opacity 0.4s;
         border-radius: 10px;
         margin: 5px 0px;
       }
@@ -121,4 +121,23 @@ body {
        .light{
         background-color: #ff0000;
       } 
+      @media screen and (max-width: 1024px) {
+        .container{
+          width: 50vw;
+          height: 50vh;
+          #input{
+            width: 100%;
+          }
+        }
+      }
+      @media screen and (max-width: 428px) {
+        .container{
+          width: 70vw;
+          height: 50vh;
+            .digitalNumbers{
+              padding: 0%;
+            }
+          }
+      }
+     
 

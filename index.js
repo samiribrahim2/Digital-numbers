@@ -30,19 +30,23 @@ btn.addEventListener('click', () => {
             value = Math.floor(value / 10);
             usedDigits++;
             const digitSegments = numbers[digit];
-            const segments = digits[i].querySelectorAll('.segment');
-            // segments.forEach(s => {
-            //     s.style.display = "none";
-            // })
             if (digitSegments) {
                 digitSegments.forEach(classname => {
                     const segment = digits[i].querySelector(`.${classname}`);
                     if (segment) {
-                        // segment.style.display = "block";
                         segment.classList.add('light');
+                        segment.style.opacity = '1';
+                        segment.style.zIndex = "1";
                     }
                 });
             }
+            const segments = digits[i].querySelectorAll('.segment');
+            segments.forEach(s => {
+                if (!s.classList.contains('light')) { // CHANGE THE OPACITY AND ZINDEX FOR NON ACTIVE SEGMANTS
+                    s.style.opacity = '0.5';
+                    s.style.zIndex = "0";
+                }
+            })
             // Stop if no more digits
             if (value === 0) {
                 for (let i = 0; i < digits.length - usedDigits; i++) {
@@ -52,7 +56,7 @@ btn.addEventListener('click', () => {
             }
         }
     }
-    else{
+    else {
         console.log("Invalid number : " + number.value);
         alert("Invalid number : " + number.value);
         number.value = "";
